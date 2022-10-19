@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel='stylesheet' href='/css/style.css' />
+    <title>留言 | <%= result.title %></title>
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-6">
+                    <h1><%= result.title %></h3>
+                </div>
+                <div class="col-6 text-end">
+                    <%= result.date.getFullYear() %>-<%= result.date.getMonth() %>-<%= result.date.getDate() %> | <%= result.date.getHours() %>:<%= result.date.getMinutes() %>
+                </div>
+            </div>
+            <p><%= result.detail %></p>
+            <hr>
+            <div class="text-end">
+                <a href="/" class="btn btn-primary">返回</a>
+            </div>
+
+        </div>
+    </section>
+</body>
+</html>
