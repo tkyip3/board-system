@@ -67,11 +67,6 @@ app.get("/", async function(req,res){
         data.push(item);
     });
 
-    
-    
-    
-
-
     res.render("index.ejs", {alert:alert, data: data, pageTotel: pageTotel, pageNum: pageNum});
 
 });
@@ -87,6 +82,11 @@ app.get("/msg",async function(req,res){
     let result = await collection.findOne({
         "_id": ObjectId(id)
     });
+
+    if(result === null){
+        res.redirect("/?alert=msg")
+        return;
+    }
 
 
     res.render("msg.ejs",{result:result});
